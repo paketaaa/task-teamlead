@@ -1,0 +1,196 @@
+.order{
+    &__container{
+        @include flex-ss;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__heading{
+        margin-bottom: 48px;
+    }
+
+    &__wrapper{
+        margin-top: 24px;
+        margin-bottom: 32px;
+        width: 100%;
+        @include flex-ssb;
+
+        >*{
+            width: calc(50% - 15px);
+        }
+    }
+
+    &-item{
+        position: relative;
+        @include flex-cc;
+        flex-direction: column;
+        background: rgba($color: #fff, $alpha: .8);
+        color: $black;
+
+        padding: 24px 32px;
+        border-radius: 12px;
+
+    
+        &::before{
+            content: "";
+            position: absolute;
+            width: calc(100% + 12px);
+            height: calc(100% + 12px);
+    
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+    
+            border: 3px solid rgba($color: $orange, $alpha: .5);
+            border-radius: 16px;
+            pointer-events: none;
+        }
+
+        &__inner{
+            width: 100%;
+            @include flex-cs;
+            margin-top: 24px;
+        }
+
+        &__price{
+            margin-bottom: 24px;
+            position: relative;
+
+            &::before{
+                content: "*";
+                font-size: 3rem;
+                line-height: 3rem;
+                font-weight: 700;
+                color: $orange;
+
+                position: absolute;
+                top: 12px;
+                right: 12px;
+
+            }
+        }
+
+        &__description{
+            @include p2;
+
+            &::before{
+                display: inline;
+                vertical-align: middle;
+                content: "*";
+                font-size: 3rem;
+                line-height: inherit;
+                font-weight: 700;
+                color: $orange;
+            }
+        }
+    }
+
+    &-backcall{
+        position: relative;
+        @include flex-sc;
+        flex-direction: column;
+        background: rgba($color: #fff, $alpha: .8);
+        color: $black;
+
+        padding: 24px 32px;
+        border-radius: 12px;
+
+        &::before{
+            content: "";
+            position: absolute;
+            width: calc(100% + 12px);
+            height: calc(100% + 12px);
+    
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+    
+            border: 3px solid rgba($color: $orange, $alpha: .5);
+            border-radius: 16px;
+            pointer-events: none;
+        }
+
+        &__title{
+            font-size: 2.8rem;
+            line-height: 2.8rem;
+            font-weight: 700;
+
+            margin-bottom: 24px;
+        }
+
+        >*{
+            width: 100%;
+            margin-bottom: 35px;
+
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &-price{
+        width: 100%;
+        @include flex-cc;
+        flex-direction: column;
+        padding: 12px 32px;
+        border-radius: 6px;
+        background: rgba($color: #fff, $alpha: .3);
+        &__inner{
+            @include flex-cs;
+        }
+
+        &__old{
+            font-size: 1.6rem;
+            line-height: 2rem;
+            font-weight: 700;
+            margin-right: 5px;
+
+            span{
+                color: rgba($color: #000000, $alpha: .35);
+                position: relative;
+                &::before{
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    background: #000;
+
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%) rotate(-15deg);
+                }
+            }
+        }
+
+        &__discount{
+            font-size: 1.2rem;
+            line-height: 1.4rem;
+            font-weight: 700;
+            padding: 8px 10px;
+            border-radius: 64px;
+            background: rgba($color: $orange, $alpha: .4);
+        }
+
+        &__new{
+            font-size: 2.8rem;
+            line-height: 3.6rem;
+            font-weight: 700;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .order{
+        &__wrapper{
+            margin-top: 40px;
+            >*{
+                width: 100%;
+                margin-bottom: 40px;
+
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

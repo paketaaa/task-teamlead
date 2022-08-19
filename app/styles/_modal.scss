@@ -1,0 +1,119 @@
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: #fff;
+
+    z-index: 51;
+
+    height: 100vh;
+    overflow-y: auto;
+
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+
+    &::-webkit-scrollbar {
+        background-color: transparent;
+        width: 5px;
+        border-radius: 12px 0 0 12px;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background-color: rgba($color: $orange, $alpha: .5);
+        border-radius: 12px 0 0 12px;;
+    }
+    
+    &::-webkit-scrollbar-track:hover {
+        background-color: rgba($color: $orange, $alpha: .5);
+        border-radius: 12px 0 0 12px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: $orange;
+        border-radius: 12px 0 0 12px;;
+        width: 5px;
+        cursor: pointer;
+    }
+
+    &::-webkit-scrollbar-button {
+        display: none
+    }
+
+    &-success{
+        @include flex-cc;
+        flex-direction: column;
+        width: 60vw;
+        padding: 75px 25px;
+
+        .modal-close{
+            position: absolute;
+            top: 35px;
+            right: 35px;
+        }
+
+        &__icon{
+            @include flex-cc;
+            width: 102px;
+            height: 102px;
+            border-radius: 50%;
+            background: $orange;
+
+            color: #fff;
+            font-size: 51px;
+
+            margin-bottom: 31px;
+        }
+
+        &__title{
+            text-align: center;
+            @include h2;
+            margin-bottom: 20px;
+        }
+
+        &__subtitle{
+            @include p2;
+            margin-bottom: 31px;
+        }
+    }
+
+    &-close{
+        position: relative;
+        width: 42px;
+        height: 42px;
+        border: 1px solid $black;
+
+        span{
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            background: $black;
+
+            top: 50%;
+            left: 50%;
+
+            &:nth-child(1){
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            &:nth-child(2){
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+
+        &:hover{
+            border-color: $orange;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .modal{
+        padding: 18.5px 20px;
+
+        &-success{
+            width: 100%;
+            max-width: initial;
+        }
+    }
+}

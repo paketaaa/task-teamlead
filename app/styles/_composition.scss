@@ -1,0 +1,123 @@
+.composition{
+    color: #fff;
+
+    &__container{
+        @include flex-csb;
+    }
+
+    &__column{
+        @include flex-cc;
+        flex-direction: column;
+        width: calc(((100% / 12) * 3) - 10px);
+
+        .composition-item{
+            margin-bottom: 48px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__hero{
+        width: calc(((100% / 12) * 6) - 10px);
+        @include flex-cc;
+    }
+
+    &-item{
+        @include animate;
+        text-align: center;
+        border-radius: 50%;
+        background: rgba($color: $orange, $alpha: .45);
+
+        box-shadow: 0px 0px 5px 15px rgba(0,0,0,0.2);
+
+        width: 100%;
+        display: block;
+        position: relative;
+        overflow: hidden;
+
+        &::after{
+            content: "";
+            display: block;
+            padding-top: 100%;
+        }
+
+        &__inner{
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            
+            @include flex-cc;
+            padding: 16px;
+        }
+
+        &:hover{
+            background: rgba($color: $black, $alpha: .8);
+            box-shadow: 0px 0px 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        &.content{
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+    }
+}
+
+@media (max-width: 1199px) {
+    .composition{
+        &__column{
+            width: calc(((100% / 12) * 4) - 10px);
+        }
+
+        &__hero{
+            width: calc(((100% / 12) * 4) - 10px);
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .composition{
+        &__column{
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .composition-item{
+                margin-bottom: 32px;
+                &:last-child{
+                    margin-bottom: 32px;
+                }
+            }
+        }
+
+        &__hero{
+            order: -1;
+            width: 100%;
+
+            margin-bottom: 32px;
+        }
+
+        &-item{
+            width: calc(33.333% - 16px);
+
+            &.content{
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .composition{
+        &__column{
+            justify-content: center;
+        }
+
+        &-item{
+            width: 100%;
+            max-width: 420px;
+        }
+    }
+}

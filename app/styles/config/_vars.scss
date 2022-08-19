@@ -1,0 +1,221 @@
+// Colors
+
+$black: #36322F;
+$orange: #fba92c;
+$pink: #611F72;
+$gray: #F6F3F2;
+$scrims: rgba($color: #000000, $alpha: .6);
+$mgray: #565656;
+$lgray: #9e9e9e;
+$red: #A13838;
+
+
+// Fonts Setting
+$userfont: "Montserrat";
+
+// GRID -----------------------------------
+
+// Mobile fisrt breakpoint ---
+
+$firstXS: 577px;
+$firstMD: 768px;
+$firstLG: 992px;
+$firstXL: 1280px;
+$firstXXL: 1340px;
+$firstEXL: 1680px;
+
+// Mobile last breakpoint ---
+
+$lastXS: 576px;
+$lastMD: 767px;
+$lastLG: 991px;
+$lastXL: 1279px;
+$lastXXL: 1339px;
+$lastEXL: 1679px;
+
+@mixin p2{
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+}
+
+@mixin p2b{
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+@mixin p3b{
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+}
+
+@mixin p4{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    letter-spacing: -0.01em;
+}
+
+@mixin h1 {
+    font-size: 10rem;
+    line-height: 10.5rem;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+
+    @media (max-width: 991px) {
+        font-size: 5rem;
+        line-height: 5rem;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+    }
+}
+
+@mixin h2 {
+    font-size: 7rem;
+    line-height: 7rem;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+
+    @media (max-width: 991px) {
+        font-size: 4rem;
+        line-height: 4rem;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+    }
+}
+
+@mixin h3 {
+    font-size: 3.5rem;
+    line-height: 3.2rem;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+
+    @media (max-width: 991px) {
+        font-size: 2.2rem;
+        line-height: 2.4rem;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+    }
+}
+
+
+@mixin p1 {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+
+    @media (max-width: 991px) {
+        font-size: 2.2rem;
+        line-height: 2.6rem;
+        letter-spacing: -0.02em;
+    }
+}
+
+// Mixin
+
+@mixin animate {
+    transition: all 0.3s ease;
+}
+
+@mixin flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+@mixin flex-ss {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+@mixin flex-sc {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+
+@mixin flex-sfe {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+
+@mixin flex-cs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+@mixin flex-cc {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@mixin flex-cfe {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+@mixin flex-ssb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+
+@mixin flex-csb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+@mixin icomoon($icon) {
+    display: inline-block;
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &::before{
+        content: $icon;
+    }
+}
+
+@mixin pseudoico ($icon) {
+    display: inline-block;
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    content: $icon;
+}
+
+// ----------------------------------------
